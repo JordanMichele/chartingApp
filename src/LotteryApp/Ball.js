@@ -146,6 +146,7 @@ class Ball extends Component {
     let postNum = this.props.postNum;
     let twoMinNum = this.props.twoMinNum;
     let numbersPost;
+    let newPerChangeCss;
     if (parseInt(twoMinNum) > parseInt(postNum)) {
       let perChange = this.percentChange(
         parseInt(twoMinNum),
@@ -160,6 +161,10 @@ class Ball extends Component {
         this.setState({ numbersPost: numbersPost });
       }
       this.setState({ percentChange2: newPerChange });
+      if (newPerChange > 5) {
+        newPerChangeCss = "perChangeHit";
+        this.setState({ perChangeCss: newPerChangeCss });
+      }
     } else if (parseInt(twoMinNum) <= parseInt(postNum)) {
       let perChangeInPost = this.percentChangeInc(
         parseInt(postNum),
@@ -168,10 +173,6 @@ class Ball extends Component {
       let newPerChangePost = this.state.percentChange5 - perChangeInPost;
       console.log("newPerChangePost " + newPerChangePost);
       this.setState({ percentChange2: newPerChangePost });
-    }
-    if (this.state.percentChange2 > 5) {
-      let newPerChangeCss = "perChangeHit";
-      this.setState({ perChangeCss: newPerChangeCss });
     }
   }
 
