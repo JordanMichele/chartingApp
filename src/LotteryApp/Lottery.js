@@ -153,26 +153,13 @@ class Lottery extends Component {
     };
     return (
       <div>
-        <label>POST TIME</label>
+        <h1>CHARTING APP</h1>
+        <label>15 Min</label>
         <input
           type="text"
           id="box1"
           value={this.state.value}
-          onChange={this.handleNumChangePost}
-        />
-        <label>2 Min</label>
-        <input
-          type="text"
-          id="box1"
-          value={this.state.value}
-          onChange={this.handleNumChange2Min}
-        />
-        <label>5 Min</label>
-        <input
-          type="text"
-          id="box1"
-          value={this.state.value}
-          onChange={this.handleNumChange5Min}
+          onChange={this.handleNumChange15Min}
         />
         <label>10 Min</label>
         <input
@@ -181,13 +168,28 @@ class Lottery extends Component {
           value={this.state.value}
           onChange={this.handleNumChange10Min}
         />
-        <label>15 Min</label>
+        <label>5 Min</label>
         <input
           type="text"
           id="box1"
           value={this.state.value}
-          onChange={this.handleNumChange15Min}
+          onChange={this.handleNumChange5Min}
         />
+        <label>2 Min</label>
+        <input
+          type="text"
+          id="box1"
+          value={this.state.value}
+          onChange={this.handleNumChange2Min}
+        />
+        <label>POST TIME</label>
+        <input
+          type="text"
+          id="box1"
+          value={this.state.value}
+          onChange={this.handleNumChangePost}
+        />
+
         <label>Horses in NEXT race</label>
         <input
           type="number"
