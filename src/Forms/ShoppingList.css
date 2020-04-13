@@ -1,0 +1,9 @@
+.numbers {
+  list-style-type: none;
+}
+.numberDrop {
+  color: green;
+}
+.numberNOGO {
+  color: red;
+}
