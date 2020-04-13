@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/chartingApp/static/css/main.7ddcb16e.chunk.css",
+    "main.js": "/chartingApp/static/js/main.02e0797a.chunk.js",
+    "main.js.map": "/chartingApp/static/js/main.02e0797a.chunk.js.map",
+    "runtime~main.js": "/chartingApp/static/js/runtime~main.bf93beb1.js",
+    "runtime~main.js.map": "/chartingApp/static/js/runtime~main.bf93beb1.js.map",
+    "static/js/2.0f58faaa.chunk.js": "/chartingApp/static/js/2.0f58faaa.chunk.js",
+    "static/js/2.0f58faaa.chunk.js.map": "/chartingApp/static/js/2.0f58faaa.chunk.js.map",
+    "index.html": "/chartingApp/index.html",
+    "precache-manifest.fe87e9f3ba381b88f4f1d96b95acf2f4.js": "/chartingApp/precache-manifest.fe87e9f3ba381b88f4f1d96b95acf2f4.js",
+    "service-worker.js": "/chartingApp/service-worker.js",
+    "static/css/main.7ddcb16e.chunk.css.map": "/chartingApp/static/css/main.7ddcb16e.chunk.css.map"
+  }
+}
