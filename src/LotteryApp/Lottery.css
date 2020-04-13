@@ -1,31 +1,7 @@
-/* .Lottery {
-  border: solid 2px gray;
-  padding: 1em 0 2em 0;
-  text-align: center;
-  margin: 1em auto auto;
-  border-radius: 10px;
-  width: 40em; 
-} */
-
-/* .Lottery button {
-  background-color: rgb(49, 49, 143);
-  color: white;
-  font-size: 120%;
-  border-radius: 10px;
-  margin: 1em 1em 1em;
-  padding: 8px;
-  opacity: 0.6;
-  transition: 0.3s;
-}
-
-.Lottery button:hover {
-  opacity: 1;
-} */
-
 .grid-container {
   display: grid;
   grid-template-columns: auto auto auto;
-  background-color: #2196f3;
+  background-color: #3995dc;
   padding: 15px;
 }
 
