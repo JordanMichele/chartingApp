@@ -49,6 +49,8 @@ class Ball extends Component {
       this.state.calledFifteenTo10 === true
     ) {
       this.fifteenToTen();
+      this.tenToFive();
+      this.fiveToTwo();
       this.twoToPost();
     }
     if (fiveMinNum !== undefined && this.state.calledTenTo5 === false) {
@@ -58,7 +60,9 @@ class Ball extends Component {
       prevProps.fiveMinNum !== fiveMinNum &&
       this.state.calledTenTo5 === true
     ) {
+      this.fifteenToTen();
       this.tenToFive();
+      this.fiveToTwo();
       this.twoToPost();
     }
     if (twoMinNum !== undefined && this.state.calledFiveTo2 === false) {
@@ -68,6 +72,8 @@ class Ball extends Component {
       prevProps.twoMinNum !== twoMinNum &&
       this.state.calledFiveTo2 === true
     ) {
+      this.fifteenToTen();
+      this.tenToFive();
       this.fiveToTwo();
       this.twoToPost();
     }
@@ -78,6 +84,9 @@ class Ball extends Component {
       prevProps.postNum !== postNum &&
       this.state.calledTwoToPost === true
     ) {
+      this.fifteenToTen();
+      this.tenToFive();
+      this.fiveToTwo();
       this.twoToPost();
     }
   }
@@ -105,7 +114,6 @@ class Ball extends Component {
 
   //this.rowNumber(totalHorsesCurrent, currentRace, id);
   fifteenToTen() {
-    console.log(" in Fifteen to ten");
     let fifteenMinNum = this.props.fifteenMinNum;
     let tenMinNum = this.props.tenMinNum;
     let numbers10;
@@ -127,14 +135,13 @@ class Ball extends Component {
         parseInt(tenMinNum),
         parseInt(fifteenMinNum)
       );
+      this.setState({ numbers10: "numbers10" });
       let newPerChange10 = this.state.percentChange - perChangeIn10;
       this.setState({ percentChange: newPerChange10 });
     }
-    //this.tenToFive();
   }
 
   tenToFive() {
-    console.log("in ten to 5");
     let fiveMinNum = this.props.fiveMinNum;
     let tenMinNum = this.props.tenMinNum;
     let numbers5;
@@ -157,10 +164,10 @@ class Ball extends Component {
         parseInt(fiveMinNum),
         parseInt(tenMinNum)
       );
+      this.setState({ numbers5: "numbers5" });
       let newPerChange5 = this.state.percentChange - perChangeIn5;
       this.setState({ percentChange10: newPerChange5 });
     }
-    // this.fiveToTwo();
   }
 
   fiveToTwo() {
@@ -187,6 +194,7 @@ class Ball extends Component {
         parseInt(twoMinNum),
         parseInt(fiveMinNum)
       );
+      this.setState({ numbers2: "numbers2" });
       let newPerChange2 = this.state.percentChange10 - perChangeIn2;
       this.setState({ percentChange5: newPerChange2 });
     }
@@ -220,8 +228,12 @@ class Ball extends Component {
         parseInt(postNum),
         parseInt(twoMinNum)
       );
+      this.setState({ numbersPost: "numbersPost" });
       let newPerChangePost = this.state.percentChange5 - perChangeInPost;
       this.setState({ percentChange2: newPerChangePost });
+      if (newPerChangePost < 5) {
+        this.setState({ perChangeCss: "perChange" });
+      }
     }
   }
 
