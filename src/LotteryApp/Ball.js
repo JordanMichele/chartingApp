@@ -129,28 +129,28 @@ class Ball extends Component {
     let avgBrandNews = addBrandNews / 4;
     this.setState({ avgBrandNewState: avgBrandNews });
     // SET the CSS based on positive or negative
-    if (addNews > 0) {
+    if (addNews > 9) {
       let newPerChangeCss1 = "perChangeHit";
       this.setState({ perChangeCss1: newPerChangeCss1 });
     } else {
       let regular = "perChange";
       this.setState({ perChangeCss1: regular });
     }
-    if (avgNews > 0) {
+    if (avgNews > 9) {
       let newPerChangeCss2 = "perChangeHit";
       this.setState({ perChangeCss2: newPerChangeCss2 });
     } else {
       let regular = "perChange";
       this.setState({ perChangeCss2: regular });
     }
-    if (addBrandNews > 0) {
+    if (addBrandNews > 9) {
       let newPerChangeCss3 = "perChangeHit";
       this.setState({ perChangeCss3: newPerChangeCss3 });
     } else {
       let regular = "perChange";
       this.setState({ perChangeCss3: regular });
     }
-    if (avgBrandNews > 0) {
+    if (avgBrandNews > 9) {
       let newPerChangeCss4 = "perChangeHit";
       this.setState({ perChangeCss4: newPerChangeCss4 });
     } else {
@@ -308,7 +308,7 @@ class Ball extends Component {
 
     setTimeout(() => {
       this.percentChangeOverall();
-    }, 1500);
+    }, 1000);
   }
 
   render() {
