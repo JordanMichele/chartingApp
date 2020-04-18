@@ -9,6 +9,7 @@ class Lottery extends Component {
     this.state = {
       //numbers: UTILS,
       currentRace: 0,
+      columns: [],
       auto: "",
       fiveMinNums: [],
       fiveMin: "",
@@ -50,10 +51,19 @@ class Lottery extends Component {
     this.fiveMinHandleSplit(this.state.fiveMin);
     this.twoMinHandleSplit(this.state.twoMin);
     this.postHandleSplit(this.state.postMin);
+    this.handleColumnNums();
   }
 
   handleRaceNumChange(event) {
     this.setState({ currentRace: event.target.value });
+  }
+  handleColumnNums() {
+    let arr = [];
+    let num = this.state.currentRace;
+    for (let i = 0; i < num; i++) {
+      arr.push(i + 1);
+    }
+    this.setState({ columns: arr });
   }
   // 2 MIN OUT
   handleNumChange2Min(event) {
@@ -153,7 +163,7 @@ class Lottery extends Component {
 
     return (
       <div>
-        <h1>CHARTING APP</h1>
+        <h1 className="title">CHARTING APP</h1>
         <label>15 Min</label>
         <input
           type="text"
@@ -201,6 +211,12 @@ class Lottery extends Component {
         </button>
 
         <div style={divStyle} className="grid-container">
+          {this.state.columns.map((n, index) => (
+            <h1 className="grid-item-num" key={index}>
+              {n}
+            </h1>
+          ))}
+
           {this.state.fifteenMinNums.map((n, index) => (
             <Ball
               //num={n}

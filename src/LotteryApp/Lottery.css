@@ -1,8 +1,17 @@
+.title {
+  text-align: center;
+  font-size: 45px;
+}
 .grid-container {
   display: grid;
   grid-template-columns: auto auto auto;
   background-color: #3995dc;
   padding: 15px;
+}
+.grid-item-num {
+  text-align: center;
+  color: white;
+  font-size: 40px;
 }
 
 input[type="text"],
