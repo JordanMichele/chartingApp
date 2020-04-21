@@ -10,28 +10,30 @@
 }
 .grid-item-num {
   text-align: center;
-  color: white;
+  color: black;
   /* background-color: #e46b0e; */
-  font-size: 30px;
+  font-size: 45px;
 }
 .grid-item-num-HIT {
   text-align: center;
   color: white;
-  background-color: #4caf50;
+  background-color: rgb(133, 177, 133);
   font-size: 30px;
   font-weight: bold;
 }
 .grid-item-num-NO {
   text-align: center;
-  color: white;
-  /* background-color: #e46b0e; */
+  color: black;
+  background-color: #ec0f0f;
   font-size: 30px;
 }
 .sumNum-grid-item-num {
   display: grid;
+  color: black;
   grid-template-columns: auto auto auto;
-  background-color: #3995dc;
+  background-color: white;
   padding: 15px;
+  border: 15px solid #3995dc;
 }
 
 input[type="text"],
@@ -66,7 +68,7 @@ div {
   background-color: #e46b0e;
   border: none;
   color: white;
-  padding: 25px 72px;
+  padding: 35px 100px;
   text-align: center;
   text-decoration: none;
   display: block;

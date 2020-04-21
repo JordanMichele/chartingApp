@@ -322,7 +322,7 @@ class Lottery extends Component {
 
     return (
       <div>
-        <h1 className="title">CHARTING APP</h1>
+        <h1 className="title">DOUBLES CHART</h1>
         <label>15 Min</label>
         <input
           type="text"
@@ -397,7 +397,6 @@ class Lottery extends Component {
             />
           ))}
         </div>
-        <h1 className="title">COMBO SHEET</h1>
         <h2 className="title">CURRENT RACE TOTALS</h2>
         <div style={divStyleRows} className="sumNum-grid-item-num">
           {this.state.rows.map((n, index) => (
