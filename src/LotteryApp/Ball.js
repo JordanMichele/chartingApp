@@ -289,10 +289,6 @@ class Ball extends Component {
         this.setState({ numbersPost: numbersPost });
       }
       this.setState({ percentChange2: perChange });
-      // if (newPerChange > 5) {
-      //   newPerChangeCss = "perChangeHit";
-      //   this.setState({ perChangeCss: newPerChangeCss });
-      // }
     } else if (parseInt(twoMinNum) <= parseInt(postNum)) {
       let perChangeInPost = this.percentChangeInc(
         parseInt(postNum),
@@ -301,14 +297,11 @@ class Ball extends Component {
       this.setState({ numbersPost: "numbersPost" });
       let newPerChangePost = this.state.percentChange2 - perChangeInPost;
       this.setState({ percentChange2: newPerChangePost });
-      // if (newPerChangePost < 5) {
-      //   this.setState({ perChangeCss: "perChange" });
-      // }
     }
 
-    setTimeout(() => {
-      this.percentChangeOverall();
-    }, 1000);
+    // setTimeout(() => {
+    //   this.percentChangeOverall();
+    // }, 1000);
   }
 
   render() {
@@ -332,7 +325,7 @@ class Ball extends Component {
           <li className={this.state.numbersPost}> {postNum}</li>
         </ul>
 
-        <ul className={List}>
+        {/* <ul className={List}>
           <li className={this.state.perChangeCss3}>
             SUM W/ 1st: {Math.round(10 * this.state.addBrandNewState) / 10}
           </li>
@@ -345,7 +338,7 @@ class Ball extends Component {
           <li className={this.state.perChangeCss2}>
             AVG PC: {Math.round(10 * this.state.avgNewState) / 10}
           </li>
-        </ul>
+        </ul> */}
       </div>
     );
   }

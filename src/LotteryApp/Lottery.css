@@ -11,7 +11,27 @@
 .grid-item-num {
   text-align: center;
   color: white;
-  font-size: 40px;
+  /* background-color: #e46b0e; */
+  font-size: 30px;
+}
+.grid-item-num-HIT {
+  text-align: center;
+  color: white;
+  background-color: #4caf50;
+  font-size: 30px;
+  font-weight: bold;
+}
+.grid-item-num-NO {
+  text-align: center;
+  color: white;
+  /* background-color: #e46b0e; */
+  font-size: 30px;
+}
+.sumNum-grid-item-num {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  background-color: #3995dc;
+  padding: 15px;
 }
 
 input[type="text"],
@@ -28,8 +48,8 @@ input[type="number"],
 select {
   width: 10%;
   padding: 12px 20px;
-  margin: 8px 0;
-  display: block;
+  margin: 8px 22px;
+  display: inline-block;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
