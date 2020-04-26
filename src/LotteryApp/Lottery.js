@@ -25,6 +25,7 @@ class Lottery extends Component {
       postMin: "",
       totalHorsesCurrent: 0,
       summedTotals: [],
+      summedColTotals: [],
     };
     this.handleClick = this.handleClick.bind(this);
     this.handleRaceNumChange = this.handleRaceNumChange.bind(this);
@@ -44,6 +45,7 @@ class Lottery extends Component {
     this.percentChange = this.percentChange.bind(this);
     this.percentChangeInc = this.percentChangeInc.bind(this);
     this.rowNumber = this.rowNumber.bind(this);
+    this.columnNumber = this.columnNumber.bind(this);
   }
 
   totalPercentChange() {
@@ -124,6 +126,11 @@ class Lottery extends Component {
         this.state.horsesNextRace,
         addedNumbers
       );
+      this.columnNumber(
+        this.state.totalHorsesCurrent,
+        this.state.horsesNextRace,
+        addedNumbers
+      );
     }
   }
 
@@ -170,6 +177,32 @@ class Lottery extends Component {
     let answer = Object.values(addedRows);
     let newArr = answer.map((n) => n / 100);
     this.setState({ summedTotals: newArr });
+  }
+
+  columnNumber(currentTotalNum, nextRaceHorses, arr) {
+    let addedCols = {};
+    let numRows = currentTotalNum / nextRaceHorses;
+    const numColumns = currentTotalNum / numRows;
+    let numColumns2 = currentTotalNum / numRows;
+
+    for (let i = 0; i < numColumns; i++) {
+      numColumns2 = currentTotalNum / numRows;
+      let id = i;
+      if (!addedCols[id]) {
+        addedCols[id] = arr[i];
+      }
+      while (numColumns2 < currentTotalNum) {
+        if (addedCols[id]) {
+          addedCols[id] = addedCols[id] += arr[numColumns2 + i];
+        } else {
+          addedCols[id] = arr[i];
+        }
+        numColumns2 += numColumns;
+      }
+    }
+    let answer = Object.values(addedCols);
+    let newArrCols = answer.map((n) => n / 100);
+    this.setState({ summedColTotals: newArrCols });
   }
 
   inputNext(num) {
@@ -405,6 +438,22 @@ class Lottery extends Component {
             </h1>
           ))}
           {this.state.summedTotals.map((n, index) => (
+            <p
+              className={"grid-item-num" + (n > 0 ? "-HIT" : "-NO")}
+              key={index}
+            >
+              {Math.round(100 * n) / 100}
+            </p>
+          ))}
+        </div>
+        <h2 className="title">NEXT RACE TOTALS</h2>
+        <div style={divStyleColumns} className="sumNum-grid-item-num">
+          {this.state.columns.map((n, index) => (
+            <h1 className="grid-item-num" key={index}>
+              {n}
+            </h1>
+          ))}
+          {this.state.summedColTotals.map((n, index) => (
             <p
               className={"grid-item-num" + (n > 0 ? "-HIT" : "-NO")}
               key={index}
